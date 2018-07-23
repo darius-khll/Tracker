@@ -1,8 +1,11 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+
 //const datas = require("./app/data/data.json");
-//winston log, orm, di, test, sequelizejs orm, mongoose, jwt, forever, dateTimeOffset, eslint, blocking, swagger
+
+//log(morgan, winston)
+//orm, di ioc(awilix)(InversifyJS), test, sequelizejs orm, mongoose, jwt, forever, dateTimeOffset, eslint, blocking, swagger, generator, rx
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

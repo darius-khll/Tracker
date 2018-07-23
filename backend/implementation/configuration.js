@@ -1,5 +1,5 @@
 
-class configurationService {
+class configuration {
     getConfiguration() {
         return {
             apiRoute: "/api"
@@ -7,4 +7,4 @@ class configurationService {
     };
 }
 
-module.exports = configurationService;
+module.exports = configuration;
