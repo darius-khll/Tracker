@@ -1,6 +1,6 @@
-const express = require('express');
+import * as express from "express";
 const app = express();
-const bodyParser = require('body-parser');
+import * as bodyParser from "body-parser";
 
 //const datas = require("./app/data/data.json");
 

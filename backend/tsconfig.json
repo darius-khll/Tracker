@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "lib": [
+            "ES2015"
+        ],
+        "outDir": "dist",
+        //"sourceMap": false
+    },
+    "include": [
+        "**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
