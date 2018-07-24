@@ -10,7 +10,7 @@ import * as bodyParser from "body-parser";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(require('./implementation/log'));
+require('./implementation/log')(app);
 let api = require('./implementation/apiRouter')(app); //apis should configured here
 
 app.get('/', (req, res) => {
