@@ -3,5 +3,5 @@ export interface IUserService {
 }
 
 export interface IUserService1 {
-    addUser1(): void;
+    addUser1(): string;
 }
