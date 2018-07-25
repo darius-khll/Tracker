@@ -1,10 +1,8 @@
-// import { Container } from "inversify";
-// import { TYPES } from "../service/types";
-// import * as srv from "../service/userService";
-// import { IUserService, IUserService1 } from "../service/IuserService";
+import * as srv from "../service/userService";
+import { Container } from "../node_modules/inversify";
 
-// const myContainer = new Container();
-// myContainer.bind<IUserService>(TYPES.IUserService).to(srv.UserService);
-// myContainer.bind<IUserService1>(TYPES.IUserService1).to(srv.UserService1);
+module.exports = (container: Container) => {
+    container.bind<srv.UserService1>('UserService1').to(srv.UserService1).inRequestScope();
+    container.bind<srv.UserService>('UserService').to(srv.UserService).inRequestScope();
+}
 
-// export { myContainer };
