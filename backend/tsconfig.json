@@ -6,12 +6,18 @@
         "lib": [
             "es2015"
         ],
+        "types": [
+            "reflect-metadata"
+        ],
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
         "outDir": "dist",
         //"sourceMap": false
     },
-    "include": [
-        "**/*.ts"
-    ],
+    // "include": [
+    //     "**/*.ts"
+    // ],
     "exclude": [
         "node_modules"
     ]

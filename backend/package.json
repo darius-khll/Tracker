@@ -11,7 +11,10 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-    "mongoose": "^5.2.4"
+    "inversify": "^4.13.0",
+    "inversify-express-utils": "^6.1.0",
+    "mongoose": "^5.2.4",
+    "reflect-metadata": "^0.1.12"
   },
   "devDependencies": {
     "@types/body-parser": "^1.17.0",
