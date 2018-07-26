@@ -1,20 +1,23 @@
 import { injectable, inject } from "inversify";
-import "reflect-metadata";
-import { IUserService, IUserService1 } from "../service/IuserService";
-
-@injectable()
-export class UserService1 implements IUserService1 {
-    public addUser1(): string {
-        return "wow";
-    }
-}
-
-/////////////////////
+import { IUserService } from "../service/IuserService";
+import { Context } from "../model/context"
 
 @injectable()
 export class UserService implements IUserService {
-    @inject("UserService1") private userService: UserService1
-    public addUser(): string{
-        return this.userService.addUser1();
+    @inject("Context") private context: Context
+
+    public async addUser(): Promise<void> {
+        try {
+            await this.context.connect();
+            const u = new this.context.user({ name: 'www' });
+            await u.save();
+        }
+        catch (e) {
+            throw new Error(e);
+        } finally {
+            debugger
+            await this.context.dispose();
+        }
+
     }
 }
