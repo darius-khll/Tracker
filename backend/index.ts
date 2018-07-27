@@ -5,7 +5,8 @@ import { Container } from "inversify";
 
 //const datas = require("./app/data/data.json");
 //log(morgan, winston)
-//orm, di ioc(awilix)(InversifyJS), test, sequelizejs orm, mongoose, jwt, forever, dateTimeOffset, tslint, blocking, swagger, generator, rx
+//orm, di ioc(awilix)(InversifyJS), test(jasmine, mocha, selenium, Artillery(load test))
+//sequelizejs orm, mongoose, jwt, forever, dateTimeOffset, tslint, blocking, swagger, generator, rx, clustering, lodash
 
 require("./implementation/route");
 

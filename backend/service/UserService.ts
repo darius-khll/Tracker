@@ -15,9 +15,7 @@ export class UserService implements IUserService {
         catch (e) {
             throw new Error(e);
         } finally {
-            debugger
             await this.context.dispose();
         }
-
     }
 }
