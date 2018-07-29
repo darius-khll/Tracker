@@ -6,7 +6,9 @@ import { Container } from "inversify";
 //const datas = require("./app/data/data.json");
 //log(morgan, winston)
 //orm, di ioc(awilix)(InversifyJS), test(jasmine, mocha, selenium, Artillery(load test))
-//sequelizejs orm, mongoose, jwt, forever, dateTimeOffset, tslint, blocking, swagger, generator, rx, clustering, lodash
+//sequelizejs orm, mongoose, jwt, forever,
+//dateTimeOffset, tslint, blocking, swagger, generator, rx, clustering, lodash, socket, GraphQL
+//multer (multipart/form-data), JXcore
 
 require("./implementation/route");
 
@@ -20,8 +22,17 @@ server.setConfig((app) => {
     app.use(bodyParser.json());
 
     require('./implementation/log')(app);
+
+    app.get("/", (req, res) => {
+        throw new Error("ok");
+    })
 });
 
 
 let app = server.build();
 app.listen(3000, () => { console.log("start!") });
+
+//vs code File => Preferences => Settings
+// {
+//     "javascript.implicitProjectConfig.experimentalDecorators": true
+// }
