@@ -10,8 +10,6 @@ import { Container } from "inversify";
 //dateTimeOffset, tslint, blocking, swagger, generator, rx, clustering, lodash, socket, GraphQL
 //multer (multipart/form-data), JXcore
 
-require("./implementation/route");
-
 let container = new Container();
 require("./implementation/container")(container);
 
@@ -23,10 +21,12 @@ server.setConfig((app) => {
 
     require('./implementation/log')(app);
 
-    app.get("/", (req, res) => {
-        throw new Error("ok");
+    app.get("/", (req, res, next) => {
+        res.status(500);
     })
 });
+
+require("./implementation/route");
 
 
 let app = server.build();
