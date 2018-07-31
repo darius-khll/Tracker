@@ -1,9 +1,9 @@
+import * as express from "express";
 
-module.exports = (app : any) => {
-    app.use((req : any, res: any, next: any) => {
-        next();
-        if(res.statusCode == 404)
-        {
+module.exports = (app: express.Application) => {
+    app.use(async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+        await next();
+        if (res.statusCode == 500) {
             res.end("haha 404 ;)");
         };
     })
