@@ -15,9 +15,11 @@ export class UserService implements IUserService {
 
     public async addUser(): Promise<void> {
         try {
-            await this._context.connect();
-            const u = new this._context.user({ name: 'www1' });
-            await u.save();
+            let u = new this._context.user({ name: 'www1' });
+            await this._context.save(u);
+
+            let ad = new this._context.address({ name: 'add1' });
+            await this._context.save(ad);
         }
         catch (e) {
             throw new Error(e);
