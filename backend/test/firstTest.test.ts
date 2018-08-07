@@ -12,7 +12,6 @@ describe('Test the root path', () => {
 
     beforeAll(async () => {
         require("../implementation/route");
-        container.rebind<Context>('Context').to(Context).inRequestScope();
         container.rebind<srv.UserService>('UserService').to(srv.UserService).inRequestScope();
         let server = new InversifyExpressServer(container);
         let app = server.build();
