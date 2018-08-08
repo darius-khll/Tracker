@@ -5,6 +5,9 @@ module.exports = (app: express.Application) => {
         await next();
         if (res.statusCode == 500) {
             res.end("haha 500 ;)");
-        };
+        }
+        else if (res.statusCode == 401) {
+            res.end("haha 401 ;)");
+        }
     })
 }
