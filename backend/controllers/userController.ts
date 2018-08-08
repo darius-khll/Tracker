@@ -3,7 +3,7 @@ import { interfaces, controller, httpGet, httpPost, httpDelete, request, queryPa
 import { injectable, inject } from "inversify";
 import { UserService } from "../service/userService";
 
-@controller("/user")
+@controller("/api/user")
 export class UserController implements interfaces.Controller {
 
     constructor(@inject("UserService") private userService: UserService) { }
