@@ -3,7 +3,6 @@ import * as express from "express"
 import { InversifyExpressServer } from 'inversify-express-utils';
 import * as bodyParser from "body-parser";
 import { Container } from "inversify";
-import * as passport from "passport"
 
 //const datas = require("./app/data/data.json");
 //log(morgan, winston)
@@ -19,18 +18,20 @@ let server = new InversifyExpressServer(container);
 
 declare global {
     namespace Express {
-      interface Request {
-        session: any
-      }
+        interface Request {
+            session: any
+        }
     }
-  }
+}
 
 server.setConfig((app) => {
+    require('./implementation/log')(app);
+    require('./implementation/auth')(app);
+
     app.use(bodyParser.urlencoded({ extended: true }));
     app.use(bodyParser.json());
 
     require("./implementation/passport")(app);
-    require('./implementation/log')(app);
 
     app.get("/", (req: express.Request, res, next) => {
 
