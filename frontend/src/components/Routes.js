@@ -9,9 +9,7 @@ class Routes extends Component{
     render() {
         return(
             <Router>
-                <div>
-                    <Route path="/" component={Welcome} />
-                </div>
+                <Route path="/" component={Welcome} />
             </Router>
         )
     }
