@@ -43,8 +43,7 @@
         position: relative;
     }
 
-    .text-input-container label{
-        content: "";
+    .text-input-container>label{
         display: block;
         position: absolute;
         width: 12px;
@@ -56,6 +55,7 @@
         border: 3px solid #38dede;
         transition: .3s;
     }
+    
 
     .text-input:focus+label{
         border: 6px solid #38dede;
