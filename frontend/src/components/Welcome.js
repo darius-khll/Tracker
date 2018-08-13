@@ -21,6 +21,16 @@ class Welcome extends Component{
                             <input id="password" className="text-input" type="password" placeholder="Password"/>
                             <label htmlFor="password"></label>
                         </div>
+                        <div className="text-input-container">
+                            <div className="row justify-content-center">
+                                <div className="col col-md-6 col-sm-6 col-xs-12 justify-content-center">
+                                    <button className="primary-button">Sign up</button>
+                                </div>
+                                <div className="col col-md-6 col-sm-6 col-xs-12 content-box">
+                                    Already have an account? <a href="">Login</a>  
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

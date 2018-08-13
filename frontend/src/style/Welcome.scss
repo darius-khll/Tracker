@@ -61,4 +61,24 @@
         border: 6px solid #38dede;
     }
 
+    .primary-button{
+        padding: 0 35px;
+        border: none;
+        background:$primary-color;
+        line-height:45px;
+        display: flex;
+        color:$bgcr;
+        margin-top: 15px;
+        border-radius: 25px;
+        font-size: 17px;
+        font-family: 'OpenSans-regular';
+    }
+
+    .content-box{
+        font-size: 13px;
+        padding-top: 26px;
+        padding-left: 0;
+        color: $grey-color;
+    }
+
 }
