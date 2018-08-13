@@ -25,7 +25,6 @@ declare global {
 }
 
 server.setConfig((app) => {
-    require('./implementation/log')(app);
     require('./implementation/auth')(app);
 
     app.use(bodyParser.urlencoded({ extended: true }));
@@ -50,6 +49,8 @@ server.setConfig((app) => {
         }
         //res.status(500);
     })
+
+    require('./implementation/log')(app);
 
 });
 

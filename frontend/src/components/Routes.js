@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import Welcome from './welcome';
+import Welcome from './Welcome';
 
 class Routes extends Component{
     render() {
