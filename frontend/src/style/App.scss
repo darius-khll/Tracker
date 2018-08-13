@@ -1,6 +1,10 @@
 
 @import 'constants';
 
+*,*::before,*::after{
+  transition: .5;
+}
+
 html,body{
   height: 100%;
 }
@@ -11,6 +15,11 @@ body {
     font-family: sans-serif;
     background-color: $bgcr;
     transition: .3s;
+  }
+
+  button{
+
+    outline: none;
   }
 
   button:hover{
