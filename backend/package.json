@@ -15,9 +15,11 @@
     "express": "^4.16.3",
     "inversify": "^4.13.0",
     "inversify-express-utils": "^6.1.0",
+    "jsonwebtoken": "^8.3.0",
     "mongoose": "^5.2.4",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "reflect-metadata": "^0.1.12"
   },
@@ -27,9 +29,11 @@
     "@types/cookie-session": "^2.0.35",
     "@types/express": "^4.16.0",
     "@types/jest": "^23.3.1",
+    "@types/jsonwebtoken": "^7.2.8",
     "@types/mongoose": "^5.2.1",
     "@types/node": "^10.5.2",
     "@types/passport": "^0.4.6",
+    "@types/passport-jwt": "^3.0.1",
     "jest": "^23.4.2"
   }
 }
