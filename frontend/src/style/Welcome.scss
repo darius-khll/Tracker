@@ -1,5 +1,6 @@
 @import './constants.scss';
 @import './fonts.scss';
+@import './font-awesome.scss';
 
 .container-fluid.page{
     height: 100%;
@@ -7,14 +8,19 @@
     font-family: OpenSans-Regular;
 }
 
-.container-fluid.page{
 
+.container-fluid.page>div>div{
+    max-width: 600px;
+    margin-top: 60px;
+    box-shadow: $box-shadow-wide;
+}
+.container-fluid.page{
     .registration-main-box{
-        margin-top: 60px;
-        box-shadow: $box-shadow-wide;
+        margin: 0 auto;
         padding: 60px 70px;;
         background-color: $bgcr;
-        max-width: 600px;
+        margin-left: -15px;
+        margin-right: -15px;
     }
 
     .header{
@@ -59,6 +65,92 @@
 
     .text-input:focus+label{
         border: 6px solid #38dede;
+    }
+
+    .primary-button{
+        padding: 0 35px;
+        border: none;
+        background:$primary-color;
+        line-height:45px;
+        display: flex;
+        color:$bgcr;
+        margin-top: 15px;
+        border-radius: 25px;
+        font-size: 17px;
+        font-family: 'OpenSans-regular';
+    }
+
+    .content-box{
+        font-size: 13px;
+        padding-top: 26px;
+        padding-left: 0;
+        color: $grey-color;
+    }
+
+    .another-login-ways-container::before{
+        content: "OR";
+        display:block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: $box-shadow-middle;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%,-50%);
+        background-color: $bgcr;
+        color:$primary-font-color;
+        text-align: center;
+        line-height: 40px;
+        font-size: 14px;
+    }
+
+    .another-login-ways-container{
+        padding: 50px 0;
+        position: relative;
+        background-color: #8cddde;
+        margin: 0 -15px;
+    }
+
+
+    .another-login-ways-container{
+        p{
+            text-align: center;
+            color: white;
+        }
+    
+        .social-platforms-container{
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        .social-platforms-container{
+            .col{
+                padding: 0;
+            }
+
+            .fa{
+                background-color: white;
+                display: inline-block;
+                color: $primary-color;
+                width: 35px;
+                height: 35px;
+                border-radius: 50%;
+                margin: 0 auto;
+                text-align: center;
+                line-height: 35px;
+                font-size: 16px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                cursor: pointer;
+                transition: .3s;
+            }
+
+            .fa:hover{
+                box-shadow:$light-box-shadow-thin 
+            }
+        }
     }
 
 }

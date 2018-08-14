@@ -1,6 +1,10 @@
 
 @import 'constants';
 
+*,*::before,*::after{
+  transition: .5;
+}
+
 html,body{
   height: 100%;
 }
@@ -10,6 +14,22 @@ body {
     padding: 0;
     font-family: sans-serif;
     background-color: $bgcr;
+    transition: .3s;
   }
 
+  button{
+
+    outline: none;
+  }
+
+  button:hover{
+    box-shadow: $light-box-shadow-so-thin;
+    transition: .3s;
+    cursor: pointer;
+  }
+
+  input:focus{
+    box-shadow: $light-box-shadow-so-thin;
+    transition: .3s;
+  }
   
