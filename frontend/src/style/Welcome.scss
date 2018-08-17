@@ -16,6 +16,16 @@
     box-shadow: $box-shadow-wide;
 }
 .container-fluid.page{
+
+    .row.main{
+        position: relative;
+        height: 100%;
+    }
+
+    .row.main>.col{
+        height: 615px;
+    }
+
     .registration-main-box{
         margin: 0 auto;
         padding: 60px 70px;;
@@ -154,24 +164,57 @@
         }
     }
 
-    .login-enter {
-        opacity: 0.01;
-        transform: scale(0.9) translateY(50%);
+      .signup-enter {
+          transform: translateY(-100%);
+          opacity: 0;
+      }
+      .signup-enter-active {
+        transform: translateY(0);
+        transition: 1000ms ;
+        opacity: 1;
+      }
+      .signup-enter-done{
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .signup-exit {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .signup-exit-active {
+        transform: translateY(-100%);
+        transition: 1000ms ;
+        opacity: 0;
+      }
+      .signup-exit-done{
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      .login-enter {
+        transform: translateY(0);
+        opacity: 0;
       }
       .login-enter-active {
+        transform: translateY(-100%);
+        transition: 1000ms;
         opacity: 1;
-        transform: scale(1) translateY(0%);
-        transition: all 300ms ease-out;
+      }
+      .login-enter-done{
+        transform: translateY(-100%);
+        opacity: 1;
       }
       .login-exit {
+        transform: translateY(-100%);
         opacity: 1;
-        transform: scale(1) translateY(0%);
       }
       .login-exit-active {
-        opacity: 0.01;
-        transform: scale(0.9) translateY(50%);
-        transition: all 300ms ease-out;
+        transform: translateY(0);
+        transition: 1000ms;
+        opacity: 0;
       }
-      
+      .login-exit-done{
+        transform: translateY(0);
+        opacity: 0;
+      }
 
 }
