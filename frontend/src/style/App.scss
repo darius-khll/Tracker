@@ -1,5 +1,8 @@
 
-@import 'constants';
+@import './constants.scss';
+@import './fonts.scss';
+@import './font-awesome.scss';
+@import './extendables.scss';
 
 *,*::before,*::after{
   transition: .5;

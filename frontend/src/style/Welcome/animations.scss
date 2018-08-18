@@ -1,0 +1,52 @@
+.signup-enter {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+.signup-enter-active {
+  transform: translateY(0);
+  transition: 1000ms ;
+  opacity: 1;
+}
+.signup-enter-done{
+  transform: translateY(0);
+  opacity: 1;
+}
+.signup-exit {
+  transform: translateY(0);
+  opacity: 1;
+}
+.signup-exit-active {
+  transform: translateY(-100%);
+  transition: 1000ms ;
+  opacity: 0;
+}
+.signup-exit-done{
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.login-enter {
+  transform: translateY(0);
+  opacity: 0;
+}
+.login-enter-active {
+  transform: translateY(-100%);
+  transition: 1000ms;
+  opacity: 1;
+}
+.login-enter-done{
+  transform: translateY(-100%);
+  opacity: 1;
+}
+.login-exit {
+  transform: translateY(-100%);
+  opacity: 1;
+}
+.login-exit-active {
+  transform: translateY(0);
+  transition: 1000ms;
+  opacity: 0;
+}
+.login-exit-done{
+  transform: translateY(0);
+  opacity: 0;
+}
