@@ -5,7 +5,7 @@
 @import './extendables.scss';
 
 *,*::before,*::after{
-  transition: .5;
+  transition: .5s;
 }
 
 html,body{
@@ -34,5 +34,9 @@ body {
   input:focus{
     box-shadow: $light-box-shadow-so-thin;
     transition: .3s;
+  }
+
+  .internal-link{
+    cursor: pointer;
   }
   

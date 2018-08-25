@@ -19,12 +19,12 @@ export default class Login extends Component{
                             <div className=" registration-main-box">
                                 <h2 className="header">Log In</h2>
                                 <div className="text-input-container">
-                                    <input id="username" className="text-input" type="text" placeholder="Username or Email" autocomplete="off"/>
-                                    <label htmlFor="username"></label>
+                                    <input id="login-username" className="text-input" type="text" placeholder="Username or Email" autoComplete="off"/>
+                                    <label htmlFor="login-username"></label>
                                 </div>
                                 <div className="text-input-container">
-                                    <input id="password" className="text-input" type="password" placeholder="Password" autocomplete="off"/>
-                                    <label htmlFor="password"></label>
+                                    <input id="login-password" className="text-input" type="password" placeholder="Password" autoComplete="off"/>
+                                    <label htmlFor="login-password"></label>
                                 </div>
                                 <div className="text-input-container">
                                     <div className="row justify-content-center">

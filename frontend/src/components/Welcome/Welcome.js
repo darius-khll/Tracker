@@ -3,10 +3,17 @@ import 'bootstrap/dist/css/bootstrap-grid.min.css';
 import '../../style/Welcome/main.scss';
 import { CSSTransition } from 'react-transition-group';
 
+// sub components
+
 import Login from './Login';
 import SignUp from './SignUp';
 
-class Welcome extends Component{
+// stores
+
+import {observer} from 'mobx-react';
+import usersStore from '../../store/UsersStore';
+
+ @observer class Welcome extends Component{
 
     constructor(props) {
         super(props);
@@ -14,6 +21,10 @@ class Welcome extends Component{
             isSignUpForm : true
         }
         this.loginFormUpdate = this.loginFormUpdate.bind(this);
+    }
+
+    componentDidMount() {
+        usersStore.getUsers();
     }
 
     loginFormUpdate() {
@@ -40,13 +51,13 @@ class Welcome extends Component{
                     in={this.state.isSignUpForm} 
                     timeout={1000} 
                     classNames="signup">
-                    <SignUp onUpdate={this.loginFormUpdate}/>
+                    <SignUp store={usersStore} onUpdate={this.loginFormUpdate}/>
                 </CSSTransition>
                 <CSSTransition 
                     in={!this.state.isSignUpForm} 
                     timeout={1000} 
                     classNames="login">
-                     <Login onUpdate={this.loginFormUpdate}/>
+                     <Login store={usersStore} onUpdate={this.loginFormUpdate}/>
                 </CSSTransition>
             </div>
         )

@@ -60,6 +60,10 @@
         display: block;
     }
 
+    .text-input.empty{
+        box-shadow:$error-box-shadow-so-thin;
+    }
+
     .text-input-container{
         position: relative;
     }
