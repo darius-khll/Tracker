@@ -3,6 +3,15 @@ import React , {Component} from 'react';
 export default class Login extends Component{
 
 
+    constructor(props){
+        super(props);
+        this.state = {
+            username : '',
+            password: '',
+            usernameUpdated: false,
+            passwordUpdated: false
+        }
+    }
     render() {
         return (
             <div className="row justify-content-center main">
@@ -10,11 +19,11 @@ export default class Login extends Component{
                             <div className=" registration-main-box">
                                 <h2 className="header">Log In</h2>
                                 <div className="text-input-container">
-                                    <input id="login-username" className="text-input" type="text" placeholder="Username or Email" autoComplete="off"/>
+                                    <input id="login-username" className={"text-input " + (this.state.username.length === 0 && this.state.usernameUpdated ? 'empty' : 'filled')} type="text" onChange={(e) => this.setState({username : e.target.value,usernameUpdated : true})} placeholder="Username or Email" autoComplete="off"/>
                                     <label htmlFor="login-username"></label>
                                 </div>
                                 <div className="text-input-container">
-                                    <input id="login-password" className="text-input" type="password" placeholder="Password" autoComplete="off"/>
+                                    <input id="login-password" className={"text-input " + (this.state.password.length === 0 && this.state.passwordUpdated ? 'empty' : 'filled')} type="password" onChange={(e) => this.setState({password : e.target.value,passwordUpdated: true})} placeholder="Password" autoComplete="off"/>
                                     <label htmlFor="login-password"></label>
                                 </div>
                                 <div className="text-input-container">

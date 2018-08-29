@@ -18,7 +18,6 @@ export default class SignUp extends Component{
         if(this.props.store.signUpValidation(this.state.username , this.state.email)){
             this.props.store.addUser(this.state.username ,this.state.email , this.state.password)
         }
-
     }
 
     render() {
