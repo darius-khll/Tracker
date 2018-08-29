@@ -2,15 +2,6 @@ import React , {Component} from 'react';
 
 export default class Login extends Component{
 
-    constructor(props){
-        super(props);
-
-        this.loginFormUpdate = this.loginFormUpdate.bind(this);
-    }
-
-    loginFormUpdate() {
-        this.props.onUpdate();
-    }
 
     render() {
         return (
@@ -33,7 +24,7 @@ export default class Login extends Component{
                                         </div>
                                         <div className="col col-md-6 col-sm-6 col-xs-12 content-box">
                                             New user?
-                                            <span className="internal-link" onClick={this.loginFormUpdate}> Create an account</span>  
+                                            <span className="internal-link" onClick={() => this.props.onUpdate()}> Create an account</span>  
                                         </div>
                                     </div>
                                 </div>
