@@ -19,12 +19,14 @@ class UsersStore {
     }
 
     loginValidation(username,password) {
+        let isLogin = false;
         this.users.map((user , i) => {
             if((user.username === username || user.email === username) && user.password === password){
-                return user;
+                debugger;
+                isLogin = user;
             }
         });
-        return 'Username or password is wrong'
+        return isLogin;
     }
 
     signUpValidation(username , email) {

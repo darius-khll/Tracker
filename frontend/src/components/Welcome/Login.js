@@ -1,4 +1,6 @@
 import React , {Component} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class Login extends Component{
 
@@ -12,9 +14,45 @@ export default class Login extends Component{
             passwordUpdated: false
         }
     }
+
+    formValidate(){
+        if(!this.state.username || !this.state.password){
+            toast.error('Please fill all fields', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+                });
+        }else {
+            let loginValidate = this.props.store.loginValidation(this.state.username , this.state.password);
+            if(!loginValidate){
+            toast.error('Username or password is wrong', {
+                position: "top-right",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+                });
+            }else{
+                toast.success(`Hello ${loginValidate.username}`, {
+                    position: "top-right",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true
+                    });
+            }
+        }
+    }
+
     render() {
         return (
             <div className="row justify-content-center main">
+                        <ToastContainer />
                         <div className="col col-md-6 col-sm-8 col-xs-12 align-items-center">
                             <div className=" registration-main-box">
                                 <h2 className="header">Log In</h2>
@@ -29,7 +67,7 @@ export default class Login extends Component{
                                 <div className="text-input-container">
                                     <div className="row justify-content-center">
                                         <div className="col col-md-6 col-sm-6 col-xs-12 justify-content-center">
-                                            <button className="primary-button">Login</button>
+                                            <button className="primary-button" onClick={() => this.formValidate()}>Login</button>
                                         </div>
                                         <div className="col col-md-6 col-sm-6 col-xs-12 content-box">
                                             New user?
