@@ -1,4 +1,6 @@
 import React , {Component} from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default class SignUp extends Component{
 
@@ -15,14 +17,26 @@ export default class SignUp extends Component{
     }
 
     formValidate() {
+        
         if(this.props.store.signUpValidation(this.state.username , this.state.email)){
             this.props.store.addUser(this.state.username ,this.state.email , this.state.password)
+        }else{
+            toast.error('🦄 Wow so easy!', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true
+                });
         }
     }
 
     render() {
         return (
             <div className="row justify-content-center main">
+                    
+          <ToastContainer />
                         <div className="col col-md-6 col-sm-8 col-xs-12 align-items-center">
                             <div className=" registration-main-box">
                                 <h2 className="header">Sign Up</h2>
